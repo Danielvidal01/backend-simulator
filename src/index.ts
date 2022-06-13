@@ -1,7 +1,11 @@
 import BackendSimulator from "./BackendSimulator";
+export interface User {
+  name: string;
+  id: number | string;
+}
 async function run() {
-  const backend = new BackendSimulator([
-    { name: "daniel", id: 1, haha: ["9"] },
+  const backend = new BackendSimulator<User>([
+    { name: "daniel", id: 1 },
     { name: "samuel", id: 2 },
     { name: "mozart", id: 3 },
     { name: "wendel", id: 4 },

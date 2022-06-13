@@ -4,11 +4,13 @@ export interface GetParams {
   query?: any;
   search?: string;
 }
+export interface Model {
+  id: number | string;
+}
+export default class BackendSimulator<T extends Model> {
+  private items: T[];
 
-export default class BackendSimulator {
-  private items: any[];
-
-  constructor(initialItems: any[] = []) {
+  constructor(initialItems: T[] = []) {
     this.items = initialItems;
   }
 
@@ -93,7 +95,7 @@ export default class BackendSimulator {
     });
   }
 
-  public async save(item: any) {
+  public async save(item: T) {
     return new Promise(async (resolve: any, reject: any) => {
       try {
         const itm = await this.getItemById(item.id);
