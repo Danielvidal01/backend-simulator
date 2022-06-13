@@ -1,13 +1,13 @@
 {
   "name": "backend-simulator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "back-end simulator to front-end",
   "main": "index.js",
   "repository": "git@github.com:Danielvidal01/backend-simulator.git",
   "author": "danielvidal01 <daniel.vidal@deway.com.br>",
   "license": "MIT",
   "scripts": {
-    "start":"ts-node-dev --respawn --transpile-only ./src/index.ts"
+    "start": "ts-node-dev --respawn --transpile-only ./src/index.ts"
   },
   "dependencies": {
     "typescript": "^4.7.3"
