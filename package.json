@@ -1,6 +1,6 @@
 {
   "name": "backend-simulator",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "back-end simulator to front-end",
   "main": "index.js",
   "repository": "git@github.com:Danielvidal01/backend-simulator.git",
