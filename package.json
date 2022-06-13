@@ -5,6 +5,7 @@
   "main": "index.js",
   "repository": "git@github.com:Danielvidal01/backend-simulator.git",
   "author": "danielvidal01 <daniel.vidal@deway.com.br>",
+  "keywords": ["backend", "back-end", "simulator", "backend simulator"],
   "license": "MIT",
   "scripts": {
     "start": "ts-node-dev --respawn --transpile-only ./src/index.ts"
