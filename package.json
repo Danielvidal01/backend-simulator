@@ -1,0 +1,17 @@
+{
+  "name": "backend-simulator",
+  "version": "1.0.0",
+  "description": "backend CRUD simulator for front end",
+  "main": "index.js",
+  "author": "Daniel Bezerra Vidal",
+  "license": "MIT",
+  "scripts": {
+    "start":"ts-node-dev --respawn --transpile-only ./src/index.ts"
+  },
+  "dependencies": {
+    "typescript": "^4.7.3"
+  },
+  "devDependencies": {
+    "ts-node-dev": "^2.0.0"
+  }
+}
