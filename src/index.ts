@@ -82,7 +82,7 @@ export class BackendSimulator {
     });
   }
 
-  private async getItemById(id) {
+  public async getItemById(id) {
     return new Promise((resolve: any, reject: any) => {
       try {
         const index = this.items.findIndex((item) => item.id === id);
@@ -93,7 +93,7 @@ export class BackendSimulator {
     });
   }
 
-  save(item: any) {
+  public async save(item: any) {
     return new Promise(async (resolve: any, reject: any) => {
       try {
         const itm = await this.getItemById(item.id);
@@ -103,6 +103,39 @@ export class BackendSimulator {
           throw new Error("id ja registrado");
         }
         resolve(item);
+      } catch (error) {
+        reject(error);
+      }
+    });
+  }
+
+  public async put(id: number | string, item: any) {
+    return new Promise(async (resolve: any, reject: any) => {
+      try {
+        const index = this.items.findIndex((itm) => itm.id === id);
+
+        if (index !== -1) {
+          this.items[index] = { ...this.items[index], ...item };
+          resolve({});
+        } else {
+          throw new Error("id nao encontrado");
+        }
+      } catch (error) {
+        reject(error);
+      }
+    });
+  }
+  public async delete(id: number) {
+    return new Promise(async (resolve: any, reject: any) => {
+      try {
+        const index = this.items.findIndex((itm) => itm.id === id);
+
+        if (index !== -1) {
+          this.items.splice(index, 1);
+          resolve({});
+        } else {
+          throw new Error("id nao encontrado");
+        }
       } catch (error) {
         reject(error);
       }
@@ -123,6 +156,8 @@ async function run() {
   ]);
 
   await backend.save({ name: "daniel", id: 3321 });
+  await backend.put(3321, { name: "danielLindo" });
+  await backend.delete(4);
   backend.getItems({
     pageSize: 133,
   });

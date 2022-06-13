@@ -1,9 +1,10 @@
 {
   "name": "backend-simulator",
   "version": "1.0.0",
-  "description": "backend CRUD simulator for front end",
+  "description": "back-end simulator to front-end",
   "main": "index.js",
-  "author": "Daniel Bezerra Vidal",
+  "repository": "git@github.com:Danielvidal01/backend-simulator.git",
+  "author": "danielvidal01 <daniel.vidal@deway.com.br>",
   "license": "MIT",
   "scripts": {
     "start":"ts-node-dev --respawn --transpile-only ./src/index.ts"
